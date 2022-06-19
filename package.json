@@ -1,0 +1,11 @@
+{
+  "name": "test_ylesanne_redwall",
+  "version": "1.0.0",
+  "description": "Test assignment theme",
+  "main": "index.js",
+  "author": "Raul Muser",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "5.1.3"
+  }
+}
