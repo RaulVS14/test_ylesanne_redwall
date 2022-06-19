@@ -1,0 +1,69 @@
+/*
+1. Variables
+2. General
+3. Header
+    3.1 Logo
+    3.2 Navigation
+    3.3 Title
+4. Main
+    4.1 Base
+5. Footer
+ */
+
+/* === 1. VARIABLES === */
+:root {
+    --primary-text-color: white;
+    --secondary-text-color: white;
+    --primary-border-color: white;
+}
+
+
+/* === 2. GENERAL === */
+.border--w-15 {
+    border-width: 15px;
+    border-style: solid;
+}
+
+.border--white {
+    border-color:var(--primary-border-color);
+}
+
+/* === 3. HEADER === */
+header {
+    background: url("../images/3D/ringi-aripark1.jpg") 50% 50% no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+/* === 3.1 LOGO === */
+#logo img {
+    width: 50vw;
+    height: auto;
+}
+@media screen and (min-width: 768px){
+    #logo img{
+        width: auto;
+    }
+}
+
+/* === 3.2 NAVIGATION === */
+nav {
+    padding: 20px;
+}
+@media screen and (max-width: 768px) {
+    nav{
+        align-items: center;
+    }
+}
+
+#language a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+
+/* === 3.3 TITLE === */
+#title h1 {
+    color: var(--primary-text-color);
+}

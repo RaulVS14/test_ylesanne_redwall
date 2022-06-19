@@ -1,11 +1,14 @@
 {
   "name": "test_ylesanne_redwall",
   "version": "1.0.0",
-  "description": "Test assignment theme",
   "main": "index.js",
-  "author": "Raul Muser",
+  "repository": "git@github.com:RaulVS14/test_ylesanne_redwall.git",
+  "author": "Raul <raul.muser@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "5.1.3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
