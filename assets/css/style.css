@@ -129,16 +129,6 @@ nav {
     padding: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    nav {
-        align-items: center;
-    }
-
-    nav .nav-item {
-        padding: 0.5rem 0.5rem;
-    }
-}
-
 #language a {
     text-transform: uppercase;
     text-decoration: none;
@@ -151,6 +141,8 @@ nav {
     bottom: 0;
     height: 32px;
     width: 32px;
+    display: flex;
+    align-content: end;
 }
 
 #scroll-down a {
@@ -162,6 +154,23 @@ nav {
 
 #scroll-down a:hover {
     align-items: end;
+}
+
+
+@media screen and (max-width: 768px) {
+    nav {
+        align-items: center;
+    }
+
+    nav .nav-item {
+        padding: 0.5rem 0.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #scroll-down {
+        display: none;
+    }
 }
 
 /* === 3.3 TITLE === */
