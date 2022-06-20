@@ -4,38 +4,59 @@
     2.1 Borders
     2.2 Text
     2.3 CTA
+    2.4 Icons
 3. Header
     3.1 Logo
     3.2 Navigation
     3.3 Title
 4. Main
-    4.1 Base
+    4.1 Advantages
+    4.2 Position
+    4.3 Street Map
+    4.4 Modal
 5. Footer
  */
 
 /* === 1. VARIABLES === */
 :root {
-    --primary-text-color: white;
-    --secondary-text-color: white;
-    --primary-border-color: white;
+    --brand-white: white;
+    --brand-primary: #0C0C0C;
+    --brand-secondary: #3088C7;
+    --brand-secondary-medium: #ADCFE7;
+    --brand-secondary-light: #C7DEEF;
     --cta-color: #EE1D4C;
     --cta-hover-color: #BE0E36;
+    --success: #189056;
 }
 
 
 /* === 2. GENERAL === */
 * {
     font-family: Helvetica, Arial, sans-serif;
+    color: var(--brand-primary);
+    line-height: 24px;
 }
+
+header, #advantages, #position, #street-map {
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
 
 /* === 2.1 BORDERS === */
 .border--white {
-    border-color: var(--primary-border-color);
+    border-color: var(--brand-white);
 }
 
 .border--16 {
     border-width: 16px;
     border-style: solid;
+}
+
+.border--b-16 {
+    border-bottom-width: 16px;
+    border-bottom-style: solid;
 }
 
 @media screen and (max-width: 768px) {
@@ -45,9 +66,58 @@
 }
 
 /* === 2.2 TEXT === */
-
 .text--fw-700 {
     font-weight: 700;
+}
+
+.h1 {
+    line-height: 50px;
+}
+
+.h2 {
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.h2--bt {
+    border-top: 4px;
+    border-top-style: solid;
+    padding-top: 16px;
+    margin-bottom: 40px;
+}
+
+.h2--bt-black {
+    border-top-color: var(--brand-primary);
+}
+
+.h2--bt-white {
+    border-top-color: var(--brand-white);
+}
+
+.h4 {
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.h4--bp-black {
+    border-bottom: 2px solid var(--brand-primary);
+}
+
+@media screen and (max-width: 768px) {
+    .h1 {
+        font-style: normal;
+        line-height: 42px;
+    }
+
+    .h2 {
+        font-weight: 700;
+        line-height: 36px;
+    }
+
+    .h2--bt-black {
+        padding-top: 8px;
+        margin-bottom: 24px;
+    }
 }
 
 /* === 2.3 CTA === */
@@ -57,13 +127,15 @@
     width: 304px;
     height: 40px;
 
-    color: var(--primary-text-color);
+    color: var(--brand-white);
     text-decoration: none;
+    text-align: center;
 }
 
 .cta:hover {
     background: var(--cta-hover-color);
-    color: var(--primary-text-color);
+    color: var(--brand-white);
+    text-align: center;
 }
 
 @media screen and (max-width: 370px) {
@@ -72,34 +144,54 @@
     }
 }
 
-@media screen and (min-width: 370px) {
-    #title .d-sm-none {
-        display: none !important;;
+@media screen and (max-width: 768px) {
+    .cta {
+        width: 100%;
     }
 }
 
 /* === 2.4 ICONS === */
-#caret-down {
+.icon {
     content: ' ';
+    display: block;
+}
+
+.icon--caret-down {
     height: 8px;
     width: 12px;
     background: url("../images/icons and logos/chevron_down.svg") center no-repeat;
-    display: block;
+}
+
+.icon--magnify {
+    height: 48px;
+    width: 48px;
+    background: url("../images/icons and logos/search-big.svg") center no-repeat;
+}
+
+.icon--close {
+    height: 24px;
+    width: 24px;
+    background: url("../images/icons and logos/menu close.svg") center no-repeat;
+
 }
 
 /* === 3. HEADER === */
 header {
     background: url("../images/3D/ringi-aripark1.jpg") 50% 50% no-repeat;
-    height: 100vh;
-    background-size: cover;
-    position: relative;
 }
 
-.background--gradient {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0) 100%);
+.background {
     width: 100%;
     height: 100%;
-    z-index: 0;
+}
+
+.background--gradient-dark {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.background--gradient-light {
+    background: linear-gradient(0deg, #ADCFE7 0%, rgba(173, 207, 231, 0) 100%);
+    mix-blend-mode: multiply;
 }
 
 @media screen and (min-width: 770px) {
@@ -132,7 +224,7 @@ nav {
 #language a {
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--primary-text-color);
+    color: var(--brand-white);
 }
 
 #scroll-down {
@@ -180,7 +272,17 @@ nav {
 
 #title h1 {
     width: 80%;
-    color: var(--primary-text-color);
+    color: var(--brand-white);
+}
+
+#title h1 span {
+    color: var(--brand-white);
+}
+
+@media screen and (min-width: 370px) {
+    #title .d-sm-none {
+        display: none !important;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -195,4 +297,139 @@ nav {
     #title .cta {
         width: 100%;
     }
+}
+
+/* === 4.MAIN === */
+/* === 4.1 ADVANTAGES === */
+#advantages {
+    background-color: var(--brand-secondary-light);
+    padding: 160px 0;
+}
+
+@media screen and (max-width: 768px) {
+    #advantages {
+        padding: 83px 0;
+        height: auto;
+    }
+
+    #advantages .col-12:not(:last-child) {
+        margin-bottom: 50px;
+    }
+}
+
+/* === 4.2 POSITION === */
+#position {
+    background: url("../images/3D/ringi-aripark2.jpg") 50% 50% no-repeat;
+    display: flex;
+    justify-content: center;
+    background-size: 100% 100%;
+}
+
+
+#position .background {
+    height: 55%;
+    z-index: 0;
+}
+
+#position h2 {
+    width: 50%;
+    margin-top: 120px;
+    margin-right: 60px;
+    line-height: 40px;
+    font-size: 28px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    #position {
+        background-size: auto 100%;
+    }
+
+    #position h2 {
+        width: 80%;
+        margin-top: 80px;
+        margin-right: 0;
+    }
+}
+
+/* === 4.3 Street Map === */
+#street-map {
+    background: url("../images/maps/map-est.png") 0 50% no-repeat, var(--brand-secondary-light);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    background-color: var(--brand-white);
+    padding: 16px;
+}
+
+.slide p {
+    border-bottom: 1px solid var(--brand-primary);
+    margin-bottom: 4px;
+}
+
+.slide:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+#mobile-modal {
+    display: none;
+    align-items: flex-end;
+    height: 190px;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 42px;
+}
+
+#map-cta {
+    position: absolute;
+    bottom: 32px;
+}
+
+@media screen and (max-width: 768px) {
+
+    #street-map {
+        background: url("../images/maps/map-est.png") 0 0 no-repeat, var(--brand-secondary-light);
+        background-size: 100% auto;
+        height: auto;
+    }
+
+    #mobile-modal {
+        display: flex;
+    }
+
+    #map-cta {
+        position: initial;
+        margin: 8px 0 48px 0;
+        width: 100%;
+    }
+}
+
+/* === 4.4 Modal === */
+
+.modal-body {
+    overflow: auto;
+    padding: 0;
+}
+
+#modal-image {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+#modal-image img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+.modal-body [type=button] {
+    position: absolute;
+    right: 5px;
+    top: 11px;
 }

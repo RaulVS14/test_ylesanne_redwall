@@ -17,7 +17,7 @@
 </head>
 <body>
 <header class="border--16 border--8-mobile border--white">
-    <div class="d-flex flex-column justify-content-between background--gradient">
+    <div class="d-flex flex-column justify-content-between background background--gradient-dark">
         <nav class="d-flex flex-row justify-content-between">
             <div id="logo">
                 <img src="assets/images/icons%20and%20logos/logo-white.svg"
@@ -37,12 +37,98 @@
     </div>
     <div id="scroll-down">
         <a href="" class="d-flex justify-content-end w-100 h-100">
-            <span id="caret-down"></span>
+            <span class="icon icon--caret-down"></span>
         </a>
     </div>
 </header>
-<main>
-
-</main>
+<div id="advantages" class="border--b-16 border--8-mobile border--white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h2 class="h2 h2--bt h2--bt-black">Toote eelised</h2>
+                <ul>
+                    <li>hooned projekteeritakse ja ehitatakse lähtuvalt kliendi soovidest</li>
+                    <li>energiasäästlikud A-energiaklassi hooned</li>
+                    <li>madalad püsikulud</li>
+                    <li>esinduslik klaasfassaadiga arhitektuur</li>
+                    <li>reklaampinnad Tartu mnt ja ringtee suunas</li>
+                    <li>võtmed kätte kuni 24 kuuga</li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-6">
+                <h2 class="h2 h2--bt h2--bt-black">Asukoha eelised</h2>
+                <ul>
+                    <li>A-klassi asukoht ja nähtavus</li>
+                    <li>väga hea ligipääsetavus</li>
+                    <li>kiire ühendus Eesti põhimaanteede ja Tallinnaga</li>
+                    <li>kõrge liiklustihedusega teede sõlmpunkt – ca 40 000 autot päevas</li>
+                    <li>kiiresti areneva äriparkide piirkonna keskus</li>
+                    <li>koostööpartnerite lähedus</li>
+                    <li>paiknemine hästi toimiva infrastruktuuriga Jüri alevikus</li>
+                    <li>tuntud ja lihtsalt leitav asukoht</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="position" class="border--b-16 border--8-mobile border--white">
+    <div class="background background--gradient-light position-absolute">
+    </div>
+    <h2 class="h2 h2--bt h2--bt-white text-white">
+        Esirea positsioon ja nähtavus Tartu mnt ja Tallinna ringtee serval
+    </h2>
+</div>
+<div id="street-map">
+    <div id="mobile-modal">
+        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#mapModal">
+            <span class="icon icon--magnify"></span>
+        </button>
+        <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-link" data-bs-dismiss="modal" aria-label="Close">
+                            <span class="icon icon--close"></span>
+                        </button>
+                        <div id="modal-image">
+                            <img src="assets/images/maps/map-est.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="statistics" class="col-12 col-md-2 offset-md-7 order-0 order-md-0">
+                <div class="d-flex flex-column slide">
+                    <h4 class="h4 h4--bp-black">Ringi tee 11</h4>
+                    <p>Hooneid 2</p>
+                    <p>Brutopind 14 000 m²</p>
+                    <p>Krunt 14 520 m²</p>
+                </div>
+                <div class="d-flex flex-column slide">
+                    <h4 class="h4 h4--bp-black">Ringi tee 13</h4>
+                    <p>Hooneid 3</p>
+                    <p>Brutopind 15 000 m²</p>
+                    <p>Krunt 16 238 m²</p>
+                </div>
+            </div>
+            <div id="location-intro" class="col-12 col-md-3 order-2 order-md-1">
+                <h2 class="h2 h2--bt h2--bt-black">Lähiümbrus</h2>
+                <p>Eesti üks olulisim liiklussõlm ja äripiirkond, mis lähiaastatel üha laieneb.</p>
+                <p>
+                    Piirkonnas tegutseb üle 2200 ettevõtte, sh Via 3L, DPD, Smarten Logistics, Rimi, Maxima,
+                    ABB,
+                    Bosch, Orkla, Pipelife, Würth, Inchcape Motors, United Motors jpt.</p>
+            </div>
+            <div id="map-cta" class="col-12 order-1 order-md-2 d-flex justify-content-center">
+                <a href="https://www.google.com/maps/place/Ringi+tee+13,+J%C3%BCri,+75305+Harju+maakond/@59.3520503,24.6077846,10z/data=!4m5!3m4!1s0x4692ea2bfbf39341:0xc72deb154c289834!8m2!3d59.3520476!4d24.8879413"
+                   class="cta text--fw-700">Asukoht Google Maps’is</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/vendor/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>
