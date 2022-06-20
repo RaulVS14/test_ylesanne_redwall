@@ -1,6 +1,9 @@
 /*
 1. Variables
 2. General
+    2.1 Borders
+    2.2 Text
+    2.3 CTA
 3. Header
     3.1 Logo
     3.2 Navigation
@@ -15,17 +18,64 @@
     --primary-text-color: white;
     --secondary-text-color: white;
     --primary-border-color: white;
+    --cta-color: #EE1D4C;
+    --cta-hover-color: #BE0E36;
 }
 
 
 /* === 2. GENERAL === */
-.border--w-15 {
-    border-width: 15px;
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* === 2.1 BORDERS === */
+.border--white {
+    border-color: var(--primary-border-color);
+}
+
+.border--15 {
+    border-width: 1.2em;
     border-style: solid;
 }
 
-.border--white {
-    border-color:var(--primary-border-color);
+@media screen and (max-width: 768px) {
+    .border--8-mobile {
+        border-width: 0.6em;
+    }
+}
+
+/* === 2.2 TEXT === */
+
+.text--fw-700 {
+    font-weight: 700;
+}
+
+/* === 2.3 CTA === */
+.cta {
+    background: var(--cta-color);
+    padding: 8px 24px;
+    width: 304px;
+    height: 40px;
+
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.cta:hover {
+    background: var(--cta-hover-color);
+    color: var(--primary-text-color);
+}
+
+@media screen and (max-width: 370px) {
+    .cta {
+        padding: 8px 15px;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    #title .d-sm-none {
+        display: none!important;;
+    }
 }
 
 /* === 3. HEADER === */
@@ -35,13 +85,31 @@ header {
     background-size: cover;
 }
 
+.background--gradient {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+@media screen and (min-width: 770px) {
+    header {
+        border-radius: 0 0 100px 0;
+    }
+
+    .background--gradient {
+        border-radius: 0 0 85px 0;
+    }
+}
+
 /* === 3.1 LOGO === */
 #logo img {
     width: 50vw;
     height: auto;
 }
-@media screen and (min-width: 768px){
-    #logo img{
+
+@media screen and (min-width: 768px) {
+    #logo img {
         width: auto;
     }
 }
@@ -50,9 +118,14 @@ header {
 nav {
     padding: 20px;
 }
+
 @media screen and (max-width: 768px) {
-    nav{
+    nav {
         align-items: center;
+    }
+
+    nav .nav-item {
+        padding: 0.5rem 0.5rem;
     }
 }
 
@@ -64,6 +137,25 @@ nav {
 
 
 /* === 3.3 TITLE === */
+#title {
+    margin-bottom: 80px;
+}
+
 #title h1 {
+    width: 80%;
     color: var(--primary-text-color);
+}
+
+@media screen and (max-width: 768px) {
+    #title {
+        margin-bottom: 0;
+    }
+
+    #title h1 {
+        width: 65%;
+    }
+
+    #title .cta {
+        width: 100%;
+    }
 }
