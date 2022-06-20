@@ -33,8 +33,8 @@
     border-color: var(--primary-border-color);
 }
 
-.border--15 {
-    border-width: 1.2em;
+.border--16 {
+    border-width: 16px;
     border-style: solid;
 }
 
@@ -74,8 +74,17 @@
 
 @media screen and (min-width: 370px) {
     #title .d-sm-none {
-        display: none!important;;
+        display: none !important;;
     }
+}
+
+/* === 2.4 ICONS === */
+#caret-down {
+    content: ' ';
+    height: 8px;
+    width: 12px;
+    background: url("../images/icons and logos/chevron_down.svg") center no-repeat;
+    display: block;
 }
 
 /* === 3. HEADER === */
@@ -83,6 +92,7 @@ header {
     background: url("../images/3D/ringi-aripark1.jpg") 50% 50% no-repeat;
     height: 100vh;
     background-size: cover;
+    position: relative;
 }
 
 .background--gradient {
@@ -135,6 +145,24 @@ nav {
     color: var(--primary-text-color);
 }
 
+#scroll-down {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 32px;
+    width: 32px;
+}
+
+#scroll-down a {
+    align-items: center;
+    transition-timing-function: ease-in-out;
+    transition-duration: 2s;
+    transition-delay: 1s;
+}
+
+#scroll-down a:hover {
+    align-items: end;
+}
 
 /* === 3.3 TITLE === */
 #title {
