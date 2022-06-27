@@ -5,6 +5,7 @@
     2.2 Text
     2.3 CTA
     2.4 Icons
+    2.4 Slide
 3. Header
     3.1 Logo
     3.2 Navigation
@@ -13,8 +14,11 @@
     4.1 Advantages
     4.2 Position
     4.3 Street Map
-    4.4 Modal
-5. Footer
+        4.3.1 Modal
+    4.4 Street Map Eng
+5. Details
+6. Footer
+6. Sticky
  */
 
 /* === 1. VARIABLES === */
@@ -92,6 +96,7 @@ header, #advantages, #position, #street-map {
 
 .h2--bt-white {
     border-top-color: var(--brand-white);
+    color: white;
 }
 
 .h4 {
@@ -130,11 +135,18 @@ header, #advantages, #position, #street-map {
     color: var(--brand-white);
     text-decoration: none;
     text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid var(--cta-color);
+    z-index: 0;
 }
 
 .cta:hover {
     background: var(--cta-hover-color);
     color: var(--brand-white);
+    border: 1px solid var(--cta-hover-color);
     text-align: center;
 }
 
@@ -153,7 +165,7 @@ header, #advantages, #position, #street-map {
 /* === 2.4 ICONS === */
 .icon {
     content: ' ';
-    display: block;
+    display: inline-block;
 }
 
 .icon--caret-down {
@@ -172,7 +184,87 @@ header, #advantages, #position, #street-map {
     height: 24px;
     width: 24px;
     background: url("../images/icons and logos/menu close.svg") center no-repeat;
+}
 
+.icon--download {
+    height: 24px;
+    width: 24px;
+    background: url("../images/icons and logos/cloud_download_white.svg") center no-repeat;
+}
+
+/* === 2.5 SLIDE === */
+
+
+.slide {
+    background-color: var(--brand-white);
+    padding: 16px;
+}
+
+.slide--transparent {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.slide--transparent-dark {
+    background-color: rgba(12, 12, 12, 0.85);
+}
+
+.slide--bt-row .row {
+    border-top: 1px solid var(--brand-primary);
+    margin-bottom: 0.5rem;
+}
+
+.slide--bt-row .row:first-of-type {
+    border-top: 2px solid var(--brand-primary);
+}
+
+.slide--bt-row .row:last-of-type {
+    border-bottom: 2px solid var(--brand-primary);
+}
+
+.slide p {
+    border-bottom: 1px solid var(--brand-primary);
+    margin-bottom: 4px;
+}
+
+.slide:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.slide--padded {
+    padding: 3rem 65px;
+}
+
+@media screen and (max-width: 992px) {
+    .slide--padded {
+        padding: 2rem 35px;
+    }
+}
+
+@keyframes slide-in {
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.scroll-animate {
+    transform: translateX(100%);
+    transition: opacity 1s ease, transform 0.5s ease;
+    opacity: 0;
+}
+
+.active {
+    animation: slide-in 0.5s forwards;
+    opacity: 1;
 }
 
 /* === 3. HEADER === */
@@ -328,7 +420,6 @@ nav {
 
 #position .background {
     height: 55%;
-    z-index: 0;
 }
 
 #position h2 {
@@ -337,7 +428,7 @@ nav {
     margin-right: 60px;
     line-height: 40px;
     font-size: 28px;
-    z-index: 1;
+    z-index: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -360,29 +451,27 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.slide {
-    background-color: var(--brand-white);
-    padding: 16px;
-}
-
-.slide p {
-    border-bottom: 1px solid var(--brand-primary);
-    margin-bottom: 4px;
-}
-
-.slide:not(:last-child) {
-    margin-bottom: 9px;
+    overflow: hidden;
 }
 
 #mobile-modal {
     display: none;
     align-items: flex-end;
-    height: 190px;
     justify-content: flex-end;
     width: 100%;
-    padding: 42px;
+    position: relative;
+}
+
+#mobile-modal > button {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+}
+
+#mobile-modal > img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 #map-cta {
@@ -390,7 +479,23 @@ nav {
     bottom: 32px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 390px) {
+
+    #mobile-modal > button {
+        right: 11%;
+    }
+
+}
+
+@media screen and (min-width: 530px) {
+
+    #mobile-modal > button {
+        right: 15%;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
 
     #street-map {
         background: url("../images/maps/map-est.png") 0 0 no-repeat, var(--brand-secondary-light);
@@ -409,20 +514,27 @@ nav {
     }
 }
 
-/* === 4.4 Modal === */
-
+/* === 4.3.1 Modal === */
 .modal-body {
-    overflow: auto;
     padding: 0;
 }
 
-#modal-image {
+.modal-image {
     width: 100%;
     height: 100%;
     overflow: auto;
+    position: relative;
 }
 
-#modal-image img {
+.map-pin {
+    position: absolute;
+    right: -445px;
+    top: 0;
+    height: 20px;
+    width: 20px;
+}
+
+.modal-image img {
     height: 100%;
     width: auto;
     display: block;
@@ -432,4 +544,116 @@ nav {
     position: absolute;
     right: 5px;
     top: 11px;
+    z-index: 3;
+}
+
+@media screen and (min-width: 768px) {
+    .map-pin {
+        right: -100px;
+    }
+}
+
+/* === 4.4 STREET MAP - ENG === */
+#street-map-eng {
+    position: relative;
+}
+
+#street-map-eng .map-pin {
+    right: -650px;
+}
+
+#street-map-eng > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#street-map-eng > button {
+    position: absolute;
+    top: 35%;
+    right: 7%;
+}
+
+@media screen and (min-width: 768px) {
+    #street-map-eng .map-pin {
+        right: -400px;
+    }
+}
+
+/* === 5. DETAILS === */
+#details {
+    height: 100vh;
+    background: url("../images/3D/ringi-aripark3.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#details img {
+    width: 100%;
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    #details {
+        height: auto;
+    }
+
+    #details img {
+        display: block;
+    }
+
+    #details > .row {
+        height: 100%;
+    }
+}
+
+/* === 6. FOOTER === */
+footer {
+    height: 100vh;
+    background: url("../images/3D/ringi-aripark1.jpg") 50% 50% no-repeat;
+    overflow: hidden;
+}
+
+input.form-control {
+    height: 48px;
+}
+
+input.form-control, textarea.form-control {
+    border: 1px solid var(--brand-white);
+}
+
+input.form-control, textarea.form-control, input.form-control:focus, textarea.form-control:focus {
+    color: var(--brand-white);
+    background-color: transparent;
+    border-radius: 0;
+}
+
+input.form-control::placeholder, textarea.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--brand-white);
+}
+
+input.form-control::-ms-input-placeholder, textarea.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--brand-white);
+}
+
+textarea::-webkit-resizer {
+    border-color: var(--brand-white);
+}
+
+@media screen and (max-width: 992px) {
+    footer {
+        height: auto;
+    }
+}
+
+/* === 7. Sticky === */
+#sticky-container{
+    bottom: -0px;
+    position: fixed;
+    width: 100vw;
+}
+@media screen and (min-width: 576px) {
+    #sticky-container {
+        width: auto;
+    }
 }
