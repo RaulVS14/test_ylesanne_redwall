@@ -1,4 +1,4 @@
-# Redwalli testülesanne
+# Redwalli test assignment
 
 ## Setup for static html files
 
@@ -12,9 +12,9 @@ npm install gulp-cli -g
 npm install live-server -g
 ```
 
-## Setup for wordpress
+## Setup for WordPress
 
-Requirements: docker and docker-compose installed
+Requirements for running: [docker-compose](https://docs.docker.com/compose/install/) installed
 
 ### Start environment
 ```
